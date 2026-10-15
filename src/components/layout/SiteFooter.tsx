@@ -1,43 +1,40 @@
-import Link from "next/link";
+import { ArrowUp, Mail } from "lucide-react";
 
+import { footerColumns } from "@/content/footerLinks";
 import { site } from "@/content/site";
 
 import { Brand } from "../Brand";
-import { ContactLink } from "../ContactLink";
+import { FooterColumn } from "./FooterColumn";
 import styles from "./SiteFooter.module.css";
 
-const legalLinks = [
-  { href: "/privacy/", label: "Gizlilik Politikası" },
-  { href: "/kvkk/", label: "KVKK Aydınlatma Metni" },
-  { href: "/delete-account/", label: "Hesap Silme" },
-  { href: "/en/privacy/", label: "Privacy Policy (EN)" },
-];
-
 export function SiteFooter() {
+  const [appColumn, legalColumn, supportColumn] = footerColumns;
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
-        <div>
+        <div className={styles.about}>
           <Brand />
-          <p className={styles.tagline}>Her gün küçük bir adımla İngilizce.</p>
+          <p>Her gün küçük bir adımla İngilizceyi kullanarak öğren.</p>
+          <span className={styles.soon}>
+            <span className={styles.dot} /> Yakında App Store ve Google Play’de
+          </span>
         </div>
-        <div>
-          <h2 className={styles.heading}>Yasal</h2>
-          <ul className={styles.list}>
-            {legalLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className={styles.heading}>İletişim</h2>
-          <p className={styles.list}><ContactLink /></p>
-        </div>
+        <FooterColumn column={appColumn} />
+        <FooterColumn column={legalColumn} />
+        <FooterColumn column={supportColumn}>
+          <li>
+            <a href={`mailto:${site.contactEmail}`} className={styles.mail}>
+              <Mail size={16} aria-hidden="true" /> {site.contactEmail}
+            </a>
+          </li>
+        </FooterColumn>
       </div>
+
       <div className={`container ${styles.bottom}`}>
-        © {new Date().getFullYear()} {site.name}. Tüm hakları saklıdır.
+        <span>© {new Date().getFullYear()} {site.name}. Tüm hakları saklıdır.</span>
+        <a href="#" className={styles.top}>
+          Başa dön <ArrowUp size={16} aria-hidden="true" />
+        </a>
       </div>
     </footer>
   );

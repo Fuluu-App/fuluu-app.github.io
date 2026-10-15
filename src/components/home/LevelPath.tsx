@@ -9,7 +9,7 @@ const levels = [
 
 export function LevelPath() {
   return (
-    <section className={`section ${styles.band}`}>
+    <section id="levels" className={`section ${styles.band}`}>
       <div className="container">
         <p className="eyebrow">Adım adım</p>
         <h2 className="section-title">Sıfırdan orta üstü seviyeye</h2>

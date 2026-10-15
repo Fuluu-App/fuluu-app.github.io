@@ -1,0 +1,4 @@
+.ring { position: relative; display: inline-grid; flex: none; place-items: center; }
+.ring svg { position: absolute; inset: 0; }
+.track { fill: none; stroke: var(--border); }
+.center { position: relative; display: grid; place-items: center; }

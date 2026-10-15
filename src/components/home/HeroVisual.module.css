@@ -1,0 +1,55 @@
+.stage {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding: 8px 0;
+}
+
+.glow {
+  position: absolute;
+  inset: 10% 5%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(255 194 51 / 0.22), rgb(108 184 245 / 0.08) 60%, transparent);
+  filter: blur(20px);
+}
+
+.chip {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px 12px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background: rgb(25 29 40 / 0.88);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgb(0 0 0 / 0.4);
+  animation: float 6s ease-in-out infinite;
+}
+
+.chip strong { display: block; font-size: 0.95rem; font-weight: 800; line-height: 1.2; }
+.chip small { color: var(--muted); font-size: 0.82rem; font-weight: 700; }
+
+.chipIcon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; }
+
+/* Placed over the empty side of the zigzag path so neither covers a lesson node. */
+.chipLeft { top: 63%; left: -2%; }
+.chipRight { top: 35%; right: -4%; animation-delay: -3s; }
+
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip { animation: none; }
+}
+
+@media (max-width: 1100px) {
+  .chipLeft { left: 0; }
+  .chipRight { right: 0; }
+}
+
+@media (max-width: 600px) {
+  .chip { display: none; }
+}

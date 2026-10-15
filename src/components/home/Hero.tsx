@@ -1,4 +1,4 @@
-import { PhoneMockup } from "./PhoneMockup";
+import { HeroVisual } from "./HeroVisual";
 import { StoreBadges } from "./StoreBadges";
 import styles from "./Hero.module.css";
 
@@ -17,7 +17,7 @@ export function Hero() {
           </p>
           <StoreBadges />
         </div>
-        <PhoneMockup />
+        <HeroVisual />
       </div>
     </section>
   );

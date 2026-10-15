@@ -1,0 +1,49 @@
+.path {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 0;
+  padding-top: 18px;
+  overflow: hidden;
+  /* Fades the path out under the dock, as if it scrolls on. */
+  mask-image: linear-gradient(to bottom, #000 78%, transparent);
+}
+
+.slot { position: relative; display: grid; justify-items: center; }
+
+.node {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.done { background: var(--success); box-shadow: 0 6px 0 #3f9670; color: var(--on-fill); }
+
+.current {
+  width: 72px;
+  height: 64px;
+  background: var(--primary);
+  box-shadow: 0 6px 0 var(--primary-dark), 0 0 0 8px var(--primary-soft);
+  color: var(--on-fill);
+}
+
+.locked { background: var(--surface-alt); box-shadow: 0 6px 0 var(--border); color: var(--muted); }
+
+.bubble {
+  position: absolute;
+  top: -34px;
+  padding: 4px 12px;
+  border: 2px solid var(--border-strong);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--primary-text);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.slot:has(.bubble) { margin-top: 30px; }

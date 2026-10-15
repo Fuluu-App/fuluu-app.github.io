@@ -11,7 +11,7 @@ const promises = [
 
 export function PrivacyPromise() {
   return (
-    <section className="section">
+    <section id="privacy" className="section">
       <div className={`container ${styles.inner}`}>
         <div>
           <p className="eyebrow">Gizlilik</p>

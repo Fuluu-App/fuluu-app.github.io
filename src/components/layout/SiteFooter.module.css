@@ -1,36 +1,101 @@
-.footer { border-top: 1px solid var(--border); background: var(--surface); }
+.footer {
+  position: relative;
+  background:
+    radial-gradient(ellipse 60% 120% at 50% 0%, rgb(255 194 51 / 0.07), transparent 70%),
+    #0d1017;
+}
+
+/* A thin warm line that fades out at both ends. */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(255 194 51 / 0.5), transparent);
+}
 
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-  padding-top: 56px;
-  padding-bottom: 40px;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: 48px;
+  padding-top: 72px;
+  padding-bottom: 56px;
 }
 
-.tagline { margin: 12px 0 0; color: var(--muted); }
+.about p { max-width: 300px; margin: 16px 0 20px; color: var(--muted); }
+
+.soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 4px var(--success-soft);
+}
 
 .heading {
-  margin: 0 0 12px;
-  font-size: 0.8rem;
+  margin: 6px 0 18px;
+  color: var(--ink);
+  font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
 }
 
-.list { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
-.list a { text-decoration: none; overflow-wrap: anywhere; }
-.list a:hover { color: var(--primary-text); }
+.links { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+
+.links a {
+  color: var(--muted);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.15s;
+}
+
+.links a:hover { color: var(--primary-text); }
+
+.mail { display: inline-flex; align-items: center; gap: 8px; }
 
 .bottom {
-  padding-top: 20px;
-  padding-bottom: 28px;
-  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+  padding-bottom: 32px;
+  /* Drawn as a background so the rule lines up with the content, not the container's padding. */
+  background: linear-gradient(var(--border), var(--border)) center top / calc(100% - 40px) 1px no-repeat;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-@media (max-width: 720px) {
-  .grid { grid-template-columns: 1fr; gap: 28px; }
+.top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.top:hover { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 36px 24px; }
+  .about { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr 1fr; padding-top: 56px; }
+  /* Full width so the email address never breaks mid-word. */
+  .grid > :last-child { grid-column: 1 / -1; }
 }

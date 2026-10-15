@@ -1,0 +1,51 @@
+.dock {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 12px 10px;
+  padding: 12px;
+  border: 2px solid rgb(255 194 51 / 0.45);
+  border-radius: 22px;
+  background: linear-gradient(135deg, #2a2618, var(--surface) 60%);
+  box-shadow: 0 5px 0 #2a2414, 0 0 28px rgb(255 194 51 / 0.18);
+}
+
+.text { display: grid; flex: 1; min-width: 0; line-height: 1.25; }
+.text small { color: var(--primary-text); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; }
+.text strong { overflow: hidden; font-size: 14px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+
+.play {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 4px 0 var(--primary-dark);
+  color: var(--on-fill);
+}
+
+.tabBar {
+  display: flex;
+  flex: none;
+  justify-content: space-around;
+  padding: 8px 12px 26px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.tab {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 72px;
+  padding: 6px 10px;
+  border-radius: 14px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.active { background: var(--primary-soft); color: var(--primary-text); }
