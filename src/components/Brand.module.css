@@ -1,0 +1,9 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}

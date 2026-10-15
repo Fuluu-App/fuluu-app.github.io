@@ -1,0 +1,86 @@
+/* Tokens mirror the app's "Midnight" palette (fluentia/src/theme/index.ts). */
+:root {
+  color-scheme: dark;
+  --bg: #11141c;
+  --surface: #191d28;
+  --surface-alt: #222735;
+  --border: #2a3040;
+  --border-strong: #3a4256;
+  --ink: #e4e8f1;
+  --muted: #98a1b5;
+  --primary: #ffc233;
+  --primary-dark: #d99a0b;
+  --primary-soft: #3a3016;
+  --primary-text: #ffd66b;
+  --accent: #6cb8f5;
+  --accent-soft: #1b2b40;
+  --success: #5dbe93;
+  --success-soft: #1a3029;
+  --streak: #ee9a5e;
+  --streak-soft: #36281f;
+  --grape: #a48be8;
+  --grape-soft: #28233f;
+  --sky: #5bb4de;
+  --sky-soft: #1a2d3a;
+  --danger: #e57c84;
+  --danger-soft: #3a2226;
+  --on-fill: #0e1320;
+  --radius: 20px;
+  --container: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+img, svg { display: block; }
+::selection { background: var(--primary); color: var(--on-fill); }
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--primary-text);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section { padding: 96px 0; }
+
+.section-title {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.section-lead { margin: 0; max-width: 560px; color: var(--muted); font-size: 1.1rem; }
+
+@media (max-width: 640px) {
+  .section { padding: 64px 0; }
+}
