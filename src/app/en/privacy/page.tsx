@@ -35,8 +35,8 @@ export default function PrivacyEnPage() {
         </thead>
         <tbody>
           <tr>
-            <td>Email address (if you create an account)</td>
-            <td>Sign-in with a one-time code and syncing progress across devices. No passwords are used.</td>
+            <td>The email address and account ID of your Apple or Google account (if you connect one). If you hide your email with Apple, the relay address Apple provides is used.</td>
+            <td>Signing in with Apple or Google and syncing progress across devices. No passwords are used and your name is not requested.</td>
           </tr>
           <tr>
             <td>Language, target level, daily goal, learning purpose, placement result</td>
@@ -74,8 +74,9 @@ export default function PrivacyEnPage() {
 
       <h2>5. Service providers</h2>
       <ul>
-        <li><strong>Supabase</strong>: hosting of account, authentication and progress data.{site.supabaseRegion ? ` Server location: ${site.supabaseRegion}.` : null}</li>
+        <li><strong>Supabase</strong>: hosting of account, authentication and progress data. Server location: Frankfurt, Germany (EU).</li>
         <li><strong>Sentry</strong>: crash and error reports, with personal data collection turned off.</li>
+        <li><strong>Sign in with Apple / Google</strong>: verifies your identity when you connect your account. Fuluu only receives your email address and account ID.</li>
         <li><strong>Apple App Store / Google Play</strong>: distribution and (if offered) subscription payments. Fuluu cannot see your payment details.</li>
       </ul>
       <p>We do not sell your data, use it for advertising or tracking, or share it for marketing.</p>

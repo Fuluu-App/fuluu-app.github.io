@@ -35,8 +35,8 @@ export default function PrivacyPage() {
         </thead>
         <tbody>
           <tr>
-            <td>E-posta adresi (hesap açarsanız)</td>
-            <td>Tek kullanımlık kod ile giriş ve ilerlemenin cihazlar arasında saklanması. Şifre kullanılmaz.</td>
+            <td>Apple veya Google hesabınızın e-posta adresi ve hesap kimliği (hesabınızı bağlarsanız). Apple’da e-postanızı gizlerseniz Apple’ın verdiği yönlendirme adresi kullanılır.</td>
+            <td>Apple veya Google ile giriş ve ilerlemenin cihazlar arasında saklanması. Şifre kullanılmaz, adınız istenmez.</td>
           </tr>
           <tr>
             <td>Dil tercihi, hedef seviye, günlük hedef, öğrenme amacı, seviye belirleme sonucu</td>
@@ -75,8 +75,9 @@ export default function PrivacyPage() {
 
       <h2>5. Hizmet sağlayıcılar</h2>
       <ul>
-        <li><strong>Supabase</strong>: hesap, kimlik doğrulama ve ilerleme verilerinin barındırılması.{site.supabaseRegion ? ` Sunucu konumu: ${site.supabaseRegion}.` : null}</li>
+        <li><strong>Supabase</strong>: hesap, kimlik doğrulama ve ilerleme verilerinin barındırılması. Sunucu konumu: Frankfurt, Almanya (AB).</li>
         <li><strong>Sentry</strong>: çökme ve hata raporları. Kişisel veri ekleme ayarı kapalıdır.</li>
+        <li><strong>Apple ile giriş / Google ile giriş</strong>: hesabınızı bağlarken kimliğinizi doğrular. Fuluu’ya yalnızca e-posta adresiniz ve hesap kimliğiniz iletilir.</li>
         <li><strong>Apple App Store / Google Play</strong>: dağıtım ve (varsa) abonelik ödemeleri. Fuluu ödeme bilgilerinize erişemez.</li>
       </ul>
       <p>Verilerinizi satmıyor, reklam veya izleme amacıyla kullanmıyor, pazarlama için paylaşmıyoruz.</p>

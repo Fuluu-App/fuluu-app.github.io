@@ -20,7 +20,7 @@ export default function KvkkPage() {
 
       <h2>2. İşlenen kişisel veriler</h2>
       <ul>
-        <li><strong>Kimlik/iletişim:</strong> e-posta adresi (yalnızca hesap açarsanız).</li>
+        <li><strong>Kimlik/iletişim:</strong> Apple veya Google hesabınızın e-posta adresi ve hesap kimliği (yalnızca hesabınızı bağlarsanız).</li>
         <li>
           <strong>Kullanıcı işlemi:</strong> öğrenme tercihleri, seviye belirleme sonucu, puan, seri, ders
           ve alıştırma sonuçları, hata ve tekrar listesi, can durumu, saat dilimi, bildirdiğiniz
@@ -59,7 +59,8 @@ export default function KvkkPage() {
 
       <h2>5. Aktarım</h2>
       <p>
-        Veriler; barındırma için Supabase’e, hata raporlama için Sentry’ye aktarılır. Bu sağlayıcıların
+        Veriler; barındırma için Supabase’e, hata raporlama için Sentry’ye aktarılır. Apple veya Google
+        ile giriş yaptığınızda kimliğiniz bu şirketler tarafından doğrulanır. Bu sağlayıcıların
         sunucuları Türkiye dışında olabilir; yurt dışına aktarım Kanun’un 9. maddesine uygun yapılır.
         Yasal zorunluluk dışında verileriniz başka kişi veya kurumlara aktarılmaz.
       </p>
